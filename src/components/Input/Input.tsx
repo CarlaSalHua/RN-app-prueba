@@ -8,7 +8,10 @@ const Input = ({Icon, type, ...props}: InputProps) => {
   return (
     <View style={styles.container}>
       {Icon}
-      <TextInput secureTextEntry={showPassword} {...props} />
+      <TextInput
+        secureTextEntry={type === 'password' && !showPassword}
+        {...props}
+      />
       {type === 'password' && (
         <ButtonShowPassword
           style={styles.btn_icon}

@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import {Home} from 'src/screens/Home';
 import {Login} from 'src/screens/Login';
+import SignUp from 'src/screens/SignUp/SignUp';
 
 function App(): JSX.Element {
   return (
@@ -23,6 +24,7 @@ function App(): JSX.Element {
           <Text>HELLOOOO</Text>
           <Login />
           <Home />
+          <SignUp />
         </View>
       </ScrollView>
     </SafeAreaView>

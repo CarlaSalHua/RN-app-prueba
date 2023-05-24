@@ -11,9 +11,9 @@ const ButtonShowPassword = ({
   return (
     <TouchableOpacity onPress={() => console.log('holla')} {...props}>
       {showPassword ? (
-        <IconEntypo name="eye" size={iconSize} color="#505050" />
-      ) : (
         <IconEntypo name="eye-with-line" size={iconSize} color="#505050" />
+      ) : (
+        <IconEntypo name="eye" size={iconSize} color="#505050" />
       )}
     </TouchableOpacity>
   );
