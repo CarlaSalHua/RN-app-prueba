@@ -5,10 +5,16 @@ import {Formik} from 'formik';
 import LoginSchema from 'src/schemas/LoginSchema';
 import LoginForm from './components/LoginForm';
 import {ILogin} from 'src/types';
+import authServices from 'src/services/authServices';
 
 const Login = () => {
-  const handleSubmit = (values: ILogin) => {
-    console.log('val', values);
+  const handleSubmit = async (values: ILogin) => {
+    try {
+      const user = await authServices.login(values);
+      console.log('user', user);
+    } catch (error) {
+      console.log('error', error);
+    }
   };
 
   return (

@@ -1,33 +1,24 @@
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-// import IconFontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-// import IconFontisto from 'react-native-vector-icons/Fontisto';
-// import IconEntypo from 'react-native-vector-icons/Entypo';
-//import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 import {Home} from 'src/screens/Home';
 import {Login} from 'src/screens/Login';
-import SignUp from 'src/screens/SignUp/SignUp';
+import {SignUp} from 'src/screens/SignUp';
+import {IRootStackParamList} from 'src/types';
+
+const Stack = createNativeStackNavigator<IRootStackParamList>();
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView>
-      <StatusBar />
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View>
-          <Text>HELLOOOO</Text>
-          <Login />
-          <Home />
-          <SignUp />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <StatusBar />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Signup" component={SignUp} />
+        <Stack.Screen name="Home" component={Home} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
