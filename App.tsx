@@ -1,7 +1,7 @@
 import React from 'react';
-import IconFontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import IconFontisto from 'react-native-vector-icons/Fontisto';
-import IconEntypo from 'react-native-vector-icons/Entypo';
+// import IconFontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+// import IconFontisto from 'react-native-vector-icons/Fontisto';
+// import IconEntypo from 'react-native-vector-icons/Entypo';
 //import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -12,6 +12,7 @@ import {
   View,
 } from 'react-native';
 import {Home} from 'src/screens/Home';
+import {Login} from 'src/screens/Login';
 
 function App(): JSX.Element {
   return (
@@ -20,11 +21,7 @@ function App(): JSX.Element {
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <View>
           <Text>HELLOOOO</Text>
-          <IconFontAwesome5 name="user" size={30} color="#900" />
-          <IconFontisto name="locked" size={30} color="#900" />
-          <IconEntypo name="eye" size={30} color="#900" />
-          <IconEntypo name="eye-with-line" size={30} color="#900" />
-
+          <Login />
           <Home />
         </View>
       </ScrollView>
