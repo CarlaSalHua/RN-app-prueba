@@ -4,6 +4,7 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
+import {DataCollapseButton} from 'src/data/DataCollapseButton';
 import React, {useState} from 'react';
 
 const CollapseButton = () => {
@@ -24,15 +25,21 @@ const CollapseButton = () => {
 
   return (
     <View style={{flex: 1}}>
-      <TouchableOpacity onPress={toggleExpanded}>
-        <Text>Expandir/Colapsar</Text>
-      </TouchableOpacity>
-      <Animated.View style={[{overflow: 'hidden'}, contentStyle]}>
-        {/* Contenido del botón expandible */}
-        <View>
-          <Text>Contenido expandible</Text>
-        </View>
-      </Animated.View>
+      {DataCollapseButton.map((info, i) => {
+        return (
+          <View key={i}>
+            <TouchableOpacity onPress={toggleExpanded}>
+              <Text>{info.title}</Text>
+            </TouchableOpacity>
+            <Animated.View style={[{overflow: 'hidden'}, contentStyle]}>
+              {/* Contenido del botón expandible */}
+              <View>
+                <Text>{info.text}</Text>
+              </View>
+            </Animated.View>
+          </View>
+        );
+      })}
     </View>
   );
 };
