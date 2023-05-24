@@ -26,6 +26,6 @@ export const DataOptions: DataOptionI[] = [
 ];
 
 interface DataOptionI {
-  img: NodeRequire;
+  img: any;
   label: string;
 }
