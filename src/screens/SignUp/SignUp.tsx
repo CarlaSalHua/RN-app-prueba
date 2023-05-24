@@ -6,10 +6,16 @@ import styles from './SignUpStyles';
 import SignUpSchema from 'src/schemas/SingUpSchema';
 import SignUpForm from './components/SignUpForm';
 import {ISignUp} from 'src/types';
+import authServices from 'src/services/authServices';
 
 const SignUp = () => {
-  const handleSubmit = (values: ISignUp) => {
-    console.log('val', values);
+  const handleSubmit = async (values: ISignUp) => {
+    try {
+      const user = await authServices.signUp(values);
+      console.log('user', user);
+    } catch (error) {
+      console.log('error', error);
+    }
   };
 
   return (

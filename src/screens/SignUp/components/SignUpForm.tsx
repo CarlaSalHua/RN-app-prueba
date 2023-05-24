@@ -19,7 +19,7 @@ const SignUpForm = ({
   return (
     <>
       <Input
-        placeholder="Usuario"
+        placeholder="usuario@gmail.com"
         Icon={<IconFontAwesome5 name="user" size={30} color="#505050" />}
         onChangeText={handleChange('user')}
         onBlur={handleBlur('user')}
@@ -27,7 +27,7 @@ const SignUpForm = ({
       />
       {errors.user && touched.user && <Text>{errors.user}</Text>}
       <Input
-        placeholder="Contraseña"
+        placeholder="contraseña"
         type="password"
         Icon={<IconFontisto name="locked" size={30} color="#505050" />}
         onChangeText={handleChange('password')}
@@ -36,7 +36,7 @@ const SignUpForm = ({
       />
       {errors.password && touched.password && <Text>{errors.password}</Text>}
       <Input
-        placeholder="Confirmar Contraseña"
+        placeholder="confirmar contraseña"
         type="password"
         Icon={<IconFontisto name="locked" size={30} color="#505050" />}
         onChangeText={handleChange('confirmPassword')}

@@ -8,7 +8,7 @@ import {ILogin} from 'src/types';
 
 const Login = () => {
   const handleSubmit = (values: ILogin) => {
-    console.log('val', values)
+    console.log('val', values);
   };
 
   return (
