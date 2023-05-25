@@ -20,11 +20,11 @@ const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
-        <View style={styles.upperContainer}>
+        <View>
           <Options />
           <CollapseButton />
         </View>
-        <View style={styles.lowerContainer}>
+        <View style={styles.btn_container}>
           <Button label="LOGOUT" color="#5CB85C" onPress={handleLogOut} />
         </View>
       </ScrollView>

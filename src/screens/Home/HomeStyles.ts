@@ -3,20 +3,16 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: 'stretch',
-    // justifyContent: 'space-between',
   },
   scrollContainer: {
     flexGrow: 1,
     justifyContent: 'space-between',
   },
-  upperContainer: {
-    // flex: 1,
-  },
-  lowerContainer: {
+  btn_container: {
     alignSelf: 'stretch',
     justifyContent: 'flex-end',
-    marginBottom: 10,
+    alignItems: 'center',
+    marginBottom: 60,
     paddingHorizontal: 20,
   },
 });

@@ -3,21 +3,30 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    paddingVertical: 20,
+    backgroundColor: '#F9F9F9',
     alignItems: 'center',
-    paddingHorizontal: 10,
+  },
+  text: {
+    alignSelf: 'flex-start',
+    fontSize: 18,
+    fontWeight: '400',
+    color: '#4F4F4F',
+    marginLeft: 10,
   },
   row: {
+    width: '90%',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
+    alignItems: 'center',
     marginBottom: 10,
+    marginTop: 18,
+    paddingHorizontal: 15,
     backgroundColor: '#F9F9F9',
   },
   column: {
-    width: '30%',
-    marginBottom: 10,
-    //backgroundColor: '#F9F9F9',
+    marginBottom: 25,
     alignItems: 'center',
   },
   button_circle: {
@@ -26,11 +35,12 @@ const styles = StyleSheet.create({
     width: 62,
     maxHeight: 62,
     height: 62,
-    backgroundColor: '#FFFFFF',
-    borderRadius: 50,
     justifyContent: 'center',
+    marginBottom: 5,
     alignItems: 'center',
     overflow: 'hidden',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 50,
     shadowColor: 'black',
     shadowOpacity: 0.2,
     shadowOffset: {
@@ -38,12 +48,17 @@ const styles = StyleSheet.create({
       height: 2,
     },
     shadowRadius: 2,
-    elevation: 0.8,
+    elevation: 1.5,
   },
   img_button: {
     width: '80%',
     height: '80%',
     resizeMode: 'contain',
+  },
+  label: {
+    color: '#4F4F4F',
+    fontSize: 13,
+    fontWeight: '100',
   },
 });
 
