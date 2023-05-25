@@ -8,7 +8,7 @@ const Button = ({label, color, ...props}: ButtonProps) => {
     <TouchableOpacity
       style={[styles.button, {backgroundColor: color}]}
       {...props}>
-      <Text>{label}</Text>
+      <Text style={styles.text}>{label}</Text>
     </TouchableOpacity>
   );
 };

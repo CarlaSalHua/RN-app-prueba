@@ -5,10 +5,10 @@ import {Formik} from 'formik';
 import styles from './SignUpStyles';
 import SignUpSchema from 'src/schemas/SingUpSchema';
 import SignUpForm from './components/SignUpForm';
-import {ISignUp} from 'src/types';
+import {IRootScreenProps, ISignUp} from 'src/types';
 import authServices from 'src/services/authServices';
 
-const SignUp = () => {
+const SignUp = ({navigation}: SignUpProps) => {
   const handleSubmit = async (values: ISignUp) => {
     try {
       const user = await authServices.signUp(values);
@@ -31,8 +31,11 @@ const SignUp = () => {
         validationSchema={SignUpSchema}
         onSubmit={handleSubmit}
       />
+      <Text onPress={() => navigation.navigate('Login')}>Cancelar</Text>
     </View>
   );
 };
 
 export default SignUp;
+
+interface SignUpProps extends IRootScreenProps<'Signup'> {}

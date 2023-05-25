@@ -1,12 +1,12 @@
-import authReducer from "@redux/slices/auth.slice";
-import { configureStore } from "@reduxjs/toolkit";
+import {configureStore} from '@reduxjs/toolkit';
+import authReducer from '../slices/authSlice';
 
 export const store = configureStore({
-    reducer:{
-        auth:authReducer
-    }
-})
+  reducer: {
+    auth: authReducer,
+  },
+});
 
-export type RootState = ReturnType<typeof store.getState>
-// tipadp del dispatch del store
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+// tipado del dispatch (del store)
+export type AppDispatch = typeof store.dispatch;

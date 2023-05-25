@@ -3,6 +3,7 @@ import {ILogin, ISignUp} from 'src/types';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
 } from 'firebase/auth';
 
 export default {
@@ -15,5 +16,8 @@ export default {
     const response = await signInWithEmailAndPassword(auth, user, password);
 
     return response.user;
+  },
+  logOut: async () => {
+    await signOut(auth);
   },
 };

@@ -4,10 +4,10 @@ import styles from './LoginStyle';
 import {Formik} from 'formik';
 import LoginSchema from 'src/schemas/LoginSchema';
 import LoginForm from './components/LoginForm';
-import {ILogin} from 'src/types';
+import {ILogin, IRootScreenProps} from 'src/types';
 import authServices from 'src/services/authServices';
 
-const Login = () => {
+const Login = ({navigation}: LoginProps) => {
   const handleSubmit = async (values: ILogin) => {
     try {
       const user = await authServices.login(values);
@@ -29,8 +29,11 @@ const Login = () => {
         validationSchema={LoginSchema}
         onSubmit={handleSubmit}
       />
+      <Text onPress={() => navigation.navigate('Signup')}>Registrarme</Text>
     </View>
   );
 };
 
 export default Login;
+
+interface LoginProps extends IRootScreenProps<'Login'> {}
