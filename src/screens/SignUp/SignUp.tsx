@@ -20,18 +20,26 @@ const SignUp = ({navigation}: SignUpProps) => {
 
   return (
     <View style={styles.container}>
-      <Text>REGISTRARME</Text>
-      <Formik
-        component={SignUpForm}
-        initialValues={{
-          user: '',
-          password: '',
-          confirmPassword: '',
-        }}
-        validationSchema={SignUpSchema}
-        onSubmit={handleSubmit}
-      />
-      <Text onPress={() => navigation.navigate('Login')}>Cancelar</Text>
+      <View style={styles.sub_container}>
+        <View style={styles.title_container}>
+          <Text style={styles.title}>REGISTRARME</Text>
+        </View>
+        <View style={styles.formik}>
+          <Formik
+            component={SignUpForm}
+            initialValues={{
+              user: '',
+              password: '',
+              confirmPassword: '',
+            }}
+            validationSchema={SignUpSchema}
+            onSubmit={handleSubmit}
+          />
+        </View>
+        <Text style={styles.btn} onPress={() => navigation.navigate('Login')}>
+          Cancelar
+        </Text>
+      </View>
     </View>
   );
 };

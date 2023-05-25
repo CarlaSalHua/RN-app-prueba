@@ -2,14 +2,18 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     width: '100%',
+    height: 'auto',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
     borderBottomWidth: 1,
     borderBottomColor: '#505050',
+    paddingTop: 10,
     position: 'relative',
+  },
+  input: {
+    paddingLeft: 15,
   },
   btn_icon: {
     position: 'absolute',

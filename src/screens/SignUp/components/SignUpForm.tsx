@@ -1,4 +1,4 @@
-import {Text} from 'react-native';
+import {Text, View} from 'react-native';
 import IconFontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import IconFontisto from 'react-native-vector-icons/Fontisto';
 import React from 'react';
@@ -6,6 +6,7 @@ import {FormikProps} from 'formik';
 import {ISignUp} from 'src/types';
 import Input from 'src/components/Input/Input';
 import Button from 'src/components/Button/Button';
+import styles from '../SignUpStyles';
 
 const SignUpForm = ({
   handleChange,
@@ -46,8 +47,9 @@ const SignUpForm = ({
       {errors.confirmPassword && touched.confirmPassword && (
         <Text>{errors.confirmPassword}</Text>
       )}
-
-      <Button label="REGISTRAR" color="#5CB85C" onPress={handleSubmit} />
+      <View style={styles.btn_green}>
+        <Button label="REGISTRAR" color="#5CB85C" onPress={handleSubmit} />
+      </View>
     </>
   );
 };

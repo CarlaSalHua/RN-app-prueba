@@ -18,16 +18,28 @@ const MainNavigation = () => {
     <NavigationContainer>
       <StatusBar />
       <Stack.Navigator initialRouteName="Login">
-        {/* {!isAuth ? (
+        {!isAuth ? (
           <>
-            <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
-            <Stack.Screen name="Signup" component={SignUp} options={{ headerShown: false }}/>
+            <Stack.Screen
+              name="Login"
+              component={Login}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Signup"
+              component={SignUp}
+              options={{headerShown: false}}
+            />
           </>
-        ) : ( */}
+        ) : (
           <>
-            <Stack.Screen name="Home" component={Home} options={{ headerShown: false }}/>
+            <Stack.Screen
+              name="Home"
+              component={Home}
+              options={{headerShown: false}}
+            />
           </>
-        {/* )} */}
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );
