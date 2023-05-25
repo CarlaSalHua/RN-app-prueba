@@ -1,7 +1,6 @@
 import {TouchableOpacity, TouchableOpacityProps} from 'react-native';
 import IconEntypo from 'react-native-vector-icons/Entypo';
 import React from 'react';
-import styles from './InputStyles';
 
 const ButtonShowPassword = ({
   showPassword,

@@ -3,46 +3,55 @@ import Animated from 'react-native-reanimated';
 import {DataCollapseButton} from 'src/data/DataCollapseButton';
 import React, {useState} from 'react';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+import styles from './CollapseButtonStyles';
 
 const CollapseButton = () => {
-  const [expandedIndex, setExpandedIndex] = useState(-1);
+  const [expandedIndex, setExpandedIndex] = useState<number>(-1);
 
-  const toggleExpanded = index => {
+  const toggleExpanded = (index: number) => {
     setExpandedIndex(index === expandedIndex ? -1 : index);
   };
 
   return (
-    <View style={{flex: 1}}>
+    <>
       {DataCollapseButton.map((info, index) => {
         const isExpanded = expandedIndex === index;
-        const contentHeight = isExpanded ? 250 : 0;
+        const contentHeight = isExpanded ? 270 : 0;
         const contentOpacity = isExpanded ? 1 : 0;
 
         return (
-          <View key={index}>
-            <TouchableOpacity onPress={() => toggleExpanded(index)}>
-              <Text>{info.title}</Text>
+          <View
+            key={index}
+            style={[styles.container, {backgroundColor: info.color}]}>
+            <TouchableOpacity
+              onPress={() => toggleExpanded(index)}
+              style={styles.btn_title}>
+              <Text style={styles.title}>{info.title}</Text>
               <FontAwesome5Icon
-                name={isExpanded ? 'chevron-down' : 'chevron-up'}
+                name={isExpanded ? 'chevron-up' : 'chevron-down'}
+                size={20}
+                color={'#000000'}
               />
             </TouchableOpacity>
             <Animated.View
-              style={{
-                overflow: 'hidden',
-                height: contentHeight,
-                opacity: contentOpacity,
-              }}>
+              style={[
+                styles.animated,
+                {
+                  height: contentHeight,
+                  opacity: contentOpacity,
+                },
+              ]}>
               {/* Contenido del botón expandible */}
               {isExpanded && (
-                <View>
-                  <Text>{info.text}</Text>
+                <View style={styles.expanded}>
+                  <Text style={styles.text}>{info.text}</Text>
                 </View>
               )}
             </Animated.View>
           </View>
         );
       })}
-    </View>
+    </>
   );
 };
 
